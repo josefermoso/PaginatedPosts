@@ -28,6 +28,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+var paginate = require('express-paginate');
+// keep this before all routes that will use pagination
+app.use(paginate.middleware(10, 50));
 app.use('/posts', posts);
 
 mongoose.connect("mongodb://localhost:27017/test");

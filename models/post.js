@@ -1,4 +1,6 @@
 var mongoose = require("mongoose");
+var mongoosePaginate = require('mongoose-paginate');
+
 var postSchema = mongoose.Schema({
     id: {
         type: String,
@@ -19,6 +21,7 @@ var postSchema = mongoose.Schema({
     }
 });
 
+postSchema.plugin(mongoosePaginate);
 
 var Post = mongoose.model("Post", postSchema);
 module.exports = Post
