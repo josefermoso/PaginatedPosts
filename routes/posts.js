@@ -31,7 +31,12 @@ router.get('/paginated', function(req, res, next) {
         if (err) return next(err);
         res.json({
             //  has_more: paginate.hasNextPages(req)(pageCount),
-            result: posts
+            'result': posts.docs,
+            'paging': {
+                'total': 2,
+                'offset': 2,
+                'limit': 2
+            }
         });
     });
 });

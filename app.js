@@ -39,7 +39,7 @@ var uristring =
     process.env.MONGOLAB_URI ||
     process.env.MONGOHQ_URL ||
     process.env.MONGODB_URI ||
-    'mongodb://localhost/HelloMongoose';
+    'mongodb://localhost:27017/test';
 
 //mongoose.connect("mongodb://localhost:27017/test");
 
