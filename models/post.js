@@ -23,5 +23,5 @@ var postSchema = mongoose.Schema({
 
 postSchema.plugin(mongoosePaginate);
 
-var Post = mongoose.model("Post", postSchema);
+var Post = mongoose.model("Posts", postSchema);
 module.exports = Post
