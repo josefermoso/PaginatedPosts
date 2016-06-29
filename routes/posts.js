@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 
 router.get('/paginated', function(req, res, next) {
     Post.paginate({}, {
-        page: req.query.page,
+        offset: parseInt(req.query.offset, 10),
         limit: req.query.limit
     }, function(err, posts, pageCount, itemCount) {
 
@@ -34,7 +34,7 @@ router.get('/paginated', function(req, res, next) {
             'result': posts.docs,
             'paging': {
                 'total': posts.total,
-                'offset': posts.page,
+                'offset': posts.offset,
                 'limit': posts.limit
             }
         });
