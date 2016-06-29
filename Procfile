@@ -1,1 +1,1 @@
-web: forever start
+web: forever start ./bin/www
